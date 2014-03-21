@@ -69,12 +69,12 @@ public class ShoppingApp {
             this.row += 1;
         }
         else {
+            col += 1;
             for(Element child : children) {
                 if (child.getName().equals("category")) {
                     this.sheet.addCell(new Label(col, this.row, child.getChildren().get(0).getValue()));
                     System.out.println(tabulate(depth)+ "Category name: " + child.getChildren().get(0).getValue());
                     this.row += 1;
-                    col += 1;
                 }
                 iterate(child, depth + 1, col);
             }
